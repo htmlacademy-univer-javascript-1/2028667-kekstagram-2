@@ -48,7 +48,7 @@ const addComments = (id) => ({
   name: NAMES[getRandomNumber(0, NAMES.length-1)],
 });
 
-const addPhoto = (id) => ({
+const addPhotos = (id) => ({
   id: id,
   url: `img/avatar-${id+1}.svg`,
   description: DESCRIPTIONS[getRandomNumber(0,DESCRIPTIONS.length-1)],
@@ -62,6 +62,6 @@ const addPhoto = () => {
   }
 };
 
-addPhoto();
+addPhotos();
 
 export {photos};
