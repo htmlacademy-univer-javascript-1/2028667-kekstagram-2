@@ -56,12 +56,12 @@ const addPhoto = (id) => ({
   comments: Array.from({length : getRandomNumber(1,COUNT_COMMENTS)}).map((element,index) => addComments(index+1)),
 });
 
-const addPhotos = () => {
+const addPhoto = () => {
   for (let i=0;i<COUNT_PHOTOS;i++){
     photos.push(addPhoto(i));
   }
 };
 
-addPhotos();
+addPhoto();
 
 export {photos};
