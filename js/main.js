@@ -20,4 +20,3 @@ console.log('Слово «Mozilla» занимает ' + x.length + ' кодов
 
 console.log('Пустая строка имеет длину, равную ' + empty.length);
 /* "Пустая строка имеет длину, равную 0" */
-//https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/length
