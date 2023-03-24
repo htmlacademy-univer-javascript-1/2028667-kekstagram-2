@@ -1,23 +1,38 @@
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-  
-  console.log(getRandomInt(3));
-  // Expected output: 0, 1 or 2
-  
-  console.log(getRandomInt(1));
-  // Expected output: 0
-  
-  console.log(Math.random());
-  // Expected output: a number from 0 to <1
-//https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+const randomNumber = (startReport, endReport) => Math.round(startReport + Math.random() * (endReport - 1));
 
-var x = 'Mozilla';
-var empty = '';
+const getMaxLengthStr = (text, maxLength) => text.length <= maxLength;
 
-console.log('Слово «Mozilla» занимает ' + x.length + ' кодовых значений');
-/* "Слово «Mozilla» занимает 7 кодовых значений" */
+const createPostsArray = () => {
+    const createPost = (idElement) => {
 
-console.log('Пустая строка имеет длину, равную ' + empty.length);
-/* "Пустая строка имеет длину, равную 0" */
-//https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/length
+        const statusText = [
+            'Всё отлично!',
+            'В целом всё неплохо. Но не всё.',
+            'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
+            'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
+            'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
+            'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?',
+        ];
+
+        const names = [
+            'Wow',
+            'Petya',
+            'XXL',
+            'gussi',
+            'lololololol',
+            'hahaahhaha',
+            'pop',
+        ];
+
+        return {
+            id: idElement,
+            avatar: `img/avatar-${randomNumber(1, 6)}.svg`,
+            message: statusText[randomNumber(0, statusText.length)],
+            name: names[randomNumber(0, names.length)],
+        }
+    }
+
+    return [...Array(25)].map((el, index) => createPost(index + 1));
+}
+
+export { randomNumber, getMaxLengthStr, createPostsArray};
