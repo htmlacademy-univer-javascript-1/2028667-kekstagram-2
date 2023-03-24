@@ -1,4 +1,5 @@
-import { photoDescription } from './data.js';
+import { getPhotos } from './data.js';
+import { createThumbnails } from './thumbnails.js';
 
-// eslint-disable-next-line no-console
-console.log(photoDescription());
+const photos = getPhotos();
+createThumbnails(photos);
